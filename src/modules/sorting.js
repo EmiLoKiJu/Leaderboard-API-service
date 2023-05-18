@@ -1,10 +1,10 @@
 const sorting = (arr) => {
   for (let i = 0; i < arr.length - 1; i += 1) {
-    let tempmin = Infinity;
+    let tempmax = arr[i].score;
     let tempj = 0;
     for (let j = i + 1; j < arr.length; j += 1) {
-      if (arr[i].score < arr[j].score) {
-        tempmin = arr[i].score;
+      if (tempmax < arr[j].score) {
+        tempmax = arr[j].score;
         tempj = j;
       }
     }

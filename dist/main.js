@@ -479,15 +479,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "getScores": () => (/* binding */ getScores),
 /* harmony export */   "postScore": () => (/* binding */ postScore)
 /* harmony export */ });
-const end_point = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const endpoint = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 const gameID = 'Pde9Q6MGmHtaoQtx74V1'; // SpongeBob vs Simpsom
 
 const postScore = async (name, score) => {
-  const response = await fetch(`${end_point}${gameID}/scores/`,{
+  const response = await fetch(`${endpoint}${gameID}/scores/`, {
     method: 'POST',
     body: JSON.stringify({
-        user: `${name}`,
-        score: `${score}`,
+      user: `${name}`,
+      score: `${score}`,
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
@@ -495,13 +495,13 @@ const postScore = async (name, score) => {
   });
   const data = await response.json();
   return data;
-}
+};
 
 const getScores = async () => {
-  const response = await fetch(`${end_point}${gameID}/scores/`)
+  const response = await fetch(`${endpoint}${gameID}/scores/`);
   const data = await response.json();
   return data;
-}
+};
 
 /***/ }),
 
@@ -7759,11 +7759,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const sorting = (arr) => {
   for (let i = 0; i < arr.length - 1; i += 1) {
-    let tempmin = Infinity;
+    let tempmin = arr[i].score;
+    let tempj = 0;
     for (let j = i + 1; j < arr.length; j += 1) {
-      let tempj = 0;
-      if (arr[i].score < arr[j].score) {
-        tempmin = arr[i].score;
+      if (tempmin > arr[j].score) {
+        tempmin = arr[j].score;
         tempj = j;
       }
     }
@@ -7873,6 +7873,13 @@ const scorename = document.querySelector('#name');
 const scorescore = document.querySelector('#score');
 const refreshbutton = document.querySelector('.refreshbutton');
 
+const refresh = async () => {
+  const data = await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_3__.getScores)();
+  arrayScores = await data.result;
+  (0,_modules_sorting_js__WEBPACK_IMPORTED_MODULE_4__["default"])(arrayScores);
+  (0,_modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(arrayScores);
+};
+
 const addelement = async () => {
   await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_3__.postScore)(scorename.value, scorescore.value);
   scorename.value = '';
@@ -7886,13 +7893,6 @@ formtoadd.addEventListener('submit', (event) => {
     addelement();
   }
 });
-
-const refresh = async () => {
-  const data = await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_3__.getScores)();
-  arrayScores = await data.result;
-  (0,_modules_sorting_js__WEBPACK_IMPORTED_MODULE_4__["default"])(arrayScores);
-  (0,_modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(arrayScores);
-};
 
 refreshbutton.addEventListener('click', () => {
   refresh();

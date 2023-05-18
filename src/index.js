@@ -2,7 +2,7 @@ import './style.css';
 
 import { DateTime } from './modules/dateandtime.js';
 import iteratearray from './modules/iteratearray.js';
-import {postScore, getScores} from './modules/api.js';
+import { postScore, getScores } from './modules/api.js';
 import sorting from './modules/sorting.js';
 
 let arrayScores = [];
@@ -10,6 +10,13 @@ const formtoadd = document.querySelector('form');
 const scorename = document.querySelector('#name');
 const scorescore = document.querySelector('#score');
 const refreshbutton = document.querySelector('.refreshbutton');
+
+const refresh = async () => {
+  const data = await getScores();
+  arrayScores = await data.result;
+  sorting(arrayScores);
+  iteratearray(arrayScores);
+};
 
 const addelement = async () => {
   await postScore(scorename.value, scorescore.value);
@@ -24,13 +31,6 @@ formtoadd.addEventListener('submit', (event) => {
     addelement();
   }
 });
-
-const refresh = async () => {
-  const data = await getScores();
-  arrayScores = await data.result;
-  sorting(arrayScores);
-  iteratearray(arrayScores);
-};
 
 refreshbutton.addEventListener('click', () => {
   refresh();
