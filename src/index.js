@@ -3,26 +3,30 @@ import './style.css';
 import storageAvailable from './modules/isStorageValid.js';
 import { DateTime } from './modules/dateandtime.js';
 import iteratearray from './modules/iteratearray';
+import createscoreelement from './modules/createscoreelement';
 
-
+let arrayScores = [];
 const isStorage = storageAvailable('localStorage');
+const formtoadd = document.querySelector('form');
+const scorename = document.querySelector('#name');
+const scorescore = document.querySelector('#score');
 
-addEventListener('submit', (event) => {
+const addelement = () => {
+  createscoreelement(scorename.value, scorescore.value, arrayScores);
+  localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
+  scorename.value = '';
+  scorename.value = '';
+  iteratearray(arrayScores);
+};
+
+formtoadd.addEventListener('submit', (event) => {
   event.preventDefault();
-  newbook.title = document.querySelector('#title').value;
-  newbook.author = document.querySelector('#author').value;
-  if (newbook.title !== '' && newbook.author !== '') {
-    const newscore = Object.create(score);
-    appendNewBook();
+  if (scorename.value !== '' && scorescore.value !== '') {
+    addelement();
   }
 });
 
-const addelement = () => {
-  createScoreElement(inputElement.value, arrayScores);
-  localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
-  inputElement.value = '';
-  iteratearray(arraylist);
-};
+
 
 // Calling the events when loading the document
 
