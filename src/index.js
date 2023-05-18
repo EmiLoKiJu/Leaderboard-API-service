@@ -1,24 +1,21 @@
 import './style.css';
 
-import storageAvailable from './modules/isStorageValid.js';
 import { DateTime } from './modules/dateandtime.js';
 import iteratearray from './modules/iteratearray.js';
-import createscoreelement from './modules/createscoreelement.js';
-import {postGame} from './modules/api.js';
+import {postScore, getScores} from './modules/api.js';
+import sorting from './modules/sorting.js';
 
 let arrayScores = [];
-const isStorage = storageAvailable('localStorage');
 const formtoadd = document.querySelector('form');
 const scorename = document.querySelector('#name');
 const scorescore = document.querySelector('#score');
+const refreshbutton = document.querySelector('.refreshbutton');
 
-const addelement = () => {
-  postGame(scorename.value);
-  // createscoreelement(scorename.value, scorescore.value, arrayScores);
-  // localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
-  // scorename.value = '';
-  // scorescore.value = '';
-  // iteratearray(arrayScores);
+const addelement = async () => {
+  await postScore(scorename.value, scorescore.value);
+  scorename.value = '';
+  scorescore.value = '';
+  refresh();
 };
 
 formtoadd.addEventListener('submit', (event) => {
@@ -28,17 +25,21 @@ formtoadd.addEventListener('submit', (event) => {
   }
 });
 
-const refresh = () => {
-  arrayScores = JSON.parse(localStorage.getItem('ScoreList'));
+const refresh = async () => {
+  const data = await getScores();
+  arrayScores = await data.result;
+  sorting(arrayScores);
   iteratearray(arrayScores);
 };
+
+refreshbutton.addEventListener('click', () => {
+  refresh();
+});
 
 // Calling the events when loading the document
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (isStorage && JSON.parse(localStorage.getItem('ScoreList')) != null) {
-    refresh();
-  }
+  refresh();
 });
 
 // Date and time

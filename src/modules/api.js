@@ -1,11 +1,23 @@
 const end_point = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const gameID = 'Pde9Q6MGmHtaoQtx74V1'; // SpongeBob vs Simpsom
 
-export const postGame = async (game) => {
-  const response = await fetch('end_point',{
+export const postScore = async (name, score) => {
+  const response = await fetch(`${end_point}${gameID}/scores/`,{
     method: 'POST',
     body: JSON.stringify({
-        name: `${game}`,
+        user: `${name}`,
+        score: `${score}`,
     }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
   });
-  console.log(response);
+  const data = await response.json();
+  return data;
+}
+
+export const getScores = async () => {
+  const response = await fetch(`${end_point}${gameID}/scores/`)
+  const data = await response.json();
+  return data;
 }
