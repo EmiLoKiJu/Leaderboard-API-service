@@ -15,7 +15,7 @@ const addelement = () => {
   createscoreelement(scorename.value, scorescore.value, arrayScores);
   localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
   scorename.value = '';
-  scorename.value = '';
+  scorescore.value = '';
   iteratearray(arrayScores);
 };
 
@@ -26,14 +26,16 @@ formtoadd.addEventListener('submit', (event) => {
   }
 });
 
-
+const refresh = () => {
+  arrayScores = JSON.parse(localStorage.getItem('ScoreList'));
+  iteratearray(arrayScores);
+};
 
 // Calling the events when loading the document
 
 document.addEventListener('DOMContentLoaded', () => {
   if (isStorage && JSON.parse(localStorage.getItem('ScoreList')) != null) {
-    arrayScores = JSON.parse(localStorage.getItem('ScoreList'));
-    iteratearray(arrayScores);
+    refresh();
   }
 });
 

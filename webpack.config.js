@@ -6,6 +6,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
+    hot: true,
     static: './dist',
   },
   plugins: [
@@ -17,6 +18,9 @@ module.exports = {
       patterns: [
         { from: 'src/img', to: 'img' },
       ],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
     }),
   ],
   output: {

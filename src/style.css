@@ -52,6 +52,10 @@ p {
   text-align: start;
 }
 
+.textcenter {
+  text-align: center;
+}
+
 .activewindow {
   color: rgb(133, 133, 133);
 }
@@ -60,9 +64,10 @@ p {
   border-right: 1px solid black;
 }
 
-.addnewbutton {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+.refreshbutton {
+  margin-top: 30px;
+  margin-left: 16px;
+  height: fit-content;
 }
 
 .contactbutton {
@@ -86,4 +91,8 @@ p {
 
 .contact {
   margin: 16px 20%;
+}
+
+.scorecontainer {
+  padding: 64px;
 }

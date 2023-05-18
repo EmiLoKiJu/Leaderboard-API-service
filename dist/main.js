@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  text-align: center;\r\n}\r\n\r\nh1 {\r\n  font-size: 30px;\r\n}\r\n\r\nheader {\r\n  font-size: 20px;\r\n  margin: 1%;\r\n  border: solid 2px black;\r\n  padding: 4px 10px;\r\n}\r\n\r\nheader ul {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  cursor: pointer;\r\n}\r\n\r\nli {\r\n  padding: 0 6px;\r\n}\r\n\r\nheader li:hover {\r\n  color: rgb(196, 196, 196);\r\n}\r\n\r\np {\r\n  margin: 0;\r\n}\r\n\r\n.dflex {\r\n  display: flex;\r\n}\r\n\r\n.spacebetween {\r\n  justify-content: space-between;\r\n}\r\n\r\n.grey {\r\n  background-color: rgb(196, 196, 196);\r\n}\r\n\r\n.dnone {\r\n  display: none;\r\n}\r\n\r\n.textstart {\r\n  text-align: start;\r\n}\r\n\r\n.activewindow {\r\n  color: rgb(133, 133, 133);\r\n}\r\n\r\n.listbutton {\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.addnewbutton {\r\n  border-left: 1px solid black;\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.contactbutton {\r\n  border-left: 1px solid black;\r\n}\r\n\r\n.dateandtime {\r\n  text-align: end;\r\n  margin-right: 16px;\r\n}\r\n\r\n.bookscontainer {\r\n  margin: 4% 16px;\r\n  border: 2px solid black;\r\n}\r\n\r\n.bookscontainer div {\r\n  padding: 2px 16px;\r\n  align-items: center;\r\n}\r\n\r\n.contact {\r\n  margin: 16px 20%;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,uBAAuB;EACvB,iBAAiB;AACnB;;AAEA;EACE,qBAAqB;EACrB,UAAU;EACV,SAAS;EACT,eAAe;AACjB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,oCAAoC;AACtC;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,4BAA4B;EAC5B,6BAA6B;AAC/B;;AAEA;EACE,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,uBAAuB;AACzB;;AAEA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB","sourcesContent":["body {\r\n  text-align: center;\r\n}\r\n\r\nh1 {\r\n  font-size: 30px;\r\n}\r\n\r\nheader {\r\n  font-size: 20px;\r\n  margin: 1%;\r\n  border: solid 2px black;\r\n  padding: 4px 10px;\r\n}\r\n\r\nheader ul {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  cursor: pointer;\r\n}\r\n\r\nli {\r\n  padding: 0 6px;\r\n}\r\n\r\nheader li:hover {\r\n  color: rgb(196, 196, 196);\r\n}\r\n\r\np {\r\n  margin: 0;\r\n}\r\n\r\n.dflex {\r\n  display: flex;\r\n}\r\n\r\n.spacebetween {\r\n  justify-content: space-between;\r\n}\r\n\r\n.grey {\r\n  background-color: rgb(196, 196, 196);\r\n}\r\n\r\n.dnone {\r\n  display: none;\r\n}\r\n\r\n.textstart {\r\n  text-align: start;\r\n}\r\n\r\n.activewindow {\r\n  color: rgb(133, 133, 133);\r\n}\r\n\r\n.listbutton {\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.addnewbutton {\r\n  border-left: 1px solid black;\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.contactbutton {\r\n  border-left: 1px solid black;\r\n}\r\n\r\n.dateandtime {\r\n  text-align: end;\r\n  margin-right: 16px;\r\n}\r\n\r\n.bookscontainer {\r\n  margin: 4% 16px;\r\n  border: 2px solid black;\r\n}\r\n\r\n.bookscontainer div {\r\n  padding: 2px 16px;\r\n  align-items: center;\r\n}\r\n\r\n.contact {\r\n  margin: 16px 20%;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  text-align: center;\r\n}\r\n\r\nh1 {\r\n  font-size: 30px;\r\n}\r\n\r\nheader {\r\n  font-size: 20px;\r\n  margin: 1%;\r\n  border: solid 2px black;\r\n  padding: 4px 10px;\r\n}\r\n\r\nheader ul {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  cursor: pointer;\r\n}\r\n\r\nli {\r\n  padding: 0 6px;\r\n}\r\n\r\nheader li:hover {\r\n  color: rgb(196, 196, 196);\r\n}\r\n\r\np {\r\n  margin: 0;\r\n}\r\n\r\n.dflex {\r\n  display: flex;\r\n}\r\n\r\n.spacebetween {\r\n  justify-content: space-between;\r\n}\r\n\r\n.grey {\r\n  background-color: rgb(196, 196, 196);\r\n}\r\n\r\n.dnone {\r\n  display: none;\r\n}\r\n\r\n.textstart {\r\n  text-align: start;\r\n}\r\n\r\n.textcenter {\r\n  text-align: center;\r\n}\r\n\r\n.activewindow {\r\n  color: rgb(133, 133, 133);\r\n}\r\n\r\n.listbutton {\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.addnewbutton \r\n.refreshbutton {\r\n  border-left: 1px solid black;\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.contactbutton {\r\n  border-left: 1px solid black;\r\n}\r\n\r\n.dateandtime {\r\n  text-align: end;\r\n  margin-right: 16px;\r\n}\r\n\r\n.bookscontainer {\r\n  margin: 4% 16px;\r\n  border: 2px solid black;\r\n}\r\n\r\n.bookscontainer div {\r\n  padding: 2px 16px;\r\n  align-items: center;\r\n}\r\n\r\n.contact {\r\n  margin: 16px 20%;\r\n}\r\n\r\n.scorecontainer {\r\n  padding: 64px;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,kBAAkB;AACpB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,uBAAuB;EACvB,iBAAiB;AACnB;;AAEA;EACE,qBAAqB;EACrB,UAAU;EACV,SAAS;EACT,eAAe;AACjB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,SAAS;AACX;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,oCAAoC;AACtC;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;;EAEE,4BAA4B;EAC5B,6BAA6B;AAC/B;;AAEA;EACE,4BAA4B;AAC9B;;AAEA;EACE,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,uBAAuB;AACzB;;AAEA;EACE,iBAAiB;EACjB,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;AACf","sourcesContent":["body {\r\n  text-align: center;\r\n}\r\n\r\nh1 {\r\n  font-size: 30px;\r\n}\r\n\r\nheader {\r\n  font-size: 20px;\r\n  margin: 1%;\r\n  border: solid 2px black;\r\n  padding: 4px 10px;\r\n}\r\n\r\nheader ul {\r\n  list-style-type: none;\r\n  padding: 0;\r\n  margin: 0;\r\n  cursor: pointer;\r\n}\r\n\r\nli {\r\n  padding: 0 6px;\r\n}\r\n\r\nheader li:hover {\r\n  color: rgb(196, 196, 196);\r\n}\r\n\r\np {\r\n  margin: 0;\r\n}\r\n\r\n.dflex {\r\n  display: flex;\r\n}\r\n\r\n.spacebetween {\r\n  justify-content: space-between;\r\n}\r\n\r\n.grey {\r\n  background-color: rgb(196, 196, 196);\r\n}\r\n\r\n.dnone {\r\n  display: none;\r\n}\r\n\r\n.textstart {\r\n  text-align: start;\r\n}\r\n\r\n.textcenter {\r\n  text-align: center;\r\n}\r\n\r\n.activewindow {\r\n  color: rgb(133, 133, 133);\r\n}\r\n\r\n.listbutton {\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.addnewbutton \r\n.refreshbutton {\r\n  border-left: 1px solid black;\r\n  border-right: 1px solid black;\r\n}\r\n\r\n.contactbutton {\r\n  border-left: 1px solid black;\r\n}\r\n\r\n.dateandtime {\r\n  text-align: end;\r\n  margin-right: 16px;\r\n}\r\n\r\n.bookscontainer {\r\n  margin: 4% 16px;\r\n  border: 2px solid black;\r\n}\r\n\r\n.bookscontainer div {\r\n  padding: 2px 16px;\r\n  align-items: center;\r\n}\r\n\r\n.contact {\r\n  margin: 16px 20%;\r\n}\r\n\r\n.scorecontainer {\r\n  padding: 64px;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -465,6 +465,34 @@ function styleTagTransform(css, styleElement) {
   }
 }
 module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ "./src/modules/createscoreelement.js":
+/*!*******************************************!*\
+  !*** ./src/modules/createscoreelement.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const scoreElement = {
+    name: '',
+    score: 0,
+    index: 0,
+  };
+  
+  const createscoreelement = (str, num, arrayScores) => {
+    const newscoreelement = Object.create(scoreElement);
+    newscoreelement.name = str;
+    newscoreelement.score = num;
+    newscoreelement.index = arrayScores.length + 1;
+    arrayScores.push(newscoreelement);
+  };
+  
+  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createscoreelement);
 
 /***/ }),
 
@@ -7713,6 +7741,49 @@ const storageAvailable = (type) => {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storageAvailable);
 
+/***/ }),
+
+/***/ "./src/modules/iteratearray.js":
+/*!*************************************!*\
+  !*** ./src/modules/iteratearray.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* eslint-disable no-use-before-define */
+
+const scoreelementcontainer = document.querySelector('.scoreelementcontainer');
+
+const iteratearray = (arr) => {
+  scoreelementcontainer.innerHTML = ' ';
+  for (let i = 0; i < arr.length; i += 1) {
+    const element = document.createElement('div');
+    element.classList.add('dflex');
+    element.classList.add('spacebetween');
+    const scorenameelement = document.createElement('div');
+    scorenameelement.classList.add('scorenameelement');
+    scorenameelement.innerText = arr[i].name;
+    const scorescoreelement = document.createElement('div');
+    scorescoreelement.classList.add('scorescoreelement');
+    scorescoreelement.innerText = arr[i].score;
+    element.innerHTML = `
+    <div class="dflex">
+      <div class="specificcontainer">
+      </div>
+    </div>
+    `;
+    scoreelementcontainer.appendChild(element);
+    const specificcontainer = element.querySelector('.specificcontainer');
+    specificcontainer.appendChild(scorenameelement);
+    specificcontainer.appendChild(scorescoreelement);
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (iteratearray);
+
 /***/ })
 
 /******/ 	});
@@ -7798,29 +7869,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _modules_isStorageValid_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/isStorageValid.js */ "./src/modules/isStorageValid.js");
 /* harmony import */ var _modules_dateandtime_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/dateandtime.js */ "./src/modules/dateandtime.js");
+/* harmony import */ var _modules_iteratearray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/iteratearray */ "./src/modules/iteratearray.js");
+/* harmony import */ var _modules_createscoreelement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/createscoreelement */ "./src/modules/createscoreelement.js");
 
 
 
 
 
 
+
+let arrayScores = [];
 const isStorage = (0,_modules_isStorageValid_js__WEBPACK_IMPORTED_MODULE_1__["default"])('localStorage');
+const formtoadd = document.querySelector('form');
+const scorename = document.querySelector('#name');
+const scorescore = document.querySelector('#score');
 
-// addEventListener('submit', (event) => {
-//   event.preventDefault();
-//   newbook.title = document.querySelector('#title').value;
-//   newbook.author = document.querySelector('#author').value;
-//   if (newbook.title !== '' && newbook.author !== '') {
-//     const newbook = Object.create(book);
-//     appendNewBook();
-//   }
-// });
+const addelement = () => {
+  (0,_modules_createscoreelement__WEBPACK_IMPORTED_MODULE_4__["default"])(scorename.value, scorescore.value, arrayScores);
+  localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
+  scorename.value = '';
+  scorescore.value = '';
+  (0,_modules_iteratearray__WEBPACK_IMPORTED_MODULE_3__["default"])(arrayScores);
+};
+
+formtoadd.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (scorename.value !== '' && scorescore.value !== '') {
+    addelement();
+  }
+});
+
+const refresh = () => {
+  arrayScores = JSON.parse(localStorage.getItem('ScoreList'));
+  (0,_modules_iteratearray__WEBPACK_IMPORTED_MODULE_3__["default"])(arrayScores);
+};
 
 // Calling the events when loading the document
 
-// document.addEventListener('DOMContentLoaded', () => {
-
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  if (isStorage && JSON.parse(localStorage.getItem('ScoreList')) != null) {
+    refresh();
+  }
+});
 
 // Date and time
 

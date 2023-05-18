@@ -8,7 +8,7 @@ const scoreElement = {
     const newscoreelement = Object.create(scoreElement);
     newscoreelement.name = str;
     newscoreelement.score = num;
-    newscoreelement.index = arraylist.length + 1;
+    newscoreelement.index = arrayScores.length + 1;
     arrayScores.push(newscoreelement);
   };
   
