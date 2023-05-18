@@ -4,6 +4,7 @@ import storageAvailable from './modules/isStorageValid.js';
 import { DateTime } from './modules/dateandtime.js';
 import iteratearray from './modules/iteratearray.js';
 import createscoreelement from './modules/createscoreelement.js';
+import {postGame} from './modules/api.js';
 
 let arrayScores = [];
 const isStorage = storageAvailable('localStorage');
@@ -12,11 +13,12 @@ const scorename = document.querySelector('#name');
 const scorescore = document.querySelector('#score');
 
 const addelement = () => {
-  createscoreelement(scorename.value, scorescore.value, arrayScores);
-  localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
-  scorename.value = '';
-  scorescore.value = '';
-  iteratearray(arrayScores);
+  postGame(scorename.value);
+  // createscoreelement(scorename.value, scorescore.value, arrayScores);
+  // localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
+  // scorename.value = '';
+  // scorescore.value = '';
+  // iteratearray(arrayScores);
 };
 
 formtoadd.addEventListener('submit', (event) => {
