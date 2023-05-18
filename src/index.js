@@ -14,7 +14,7 @@ const refreshbutton = document.querySelector('.refreshbutton');
 const refresh = async () => {
   const data = await getScores();
   arrayScores = await data.result;
-  sorting(arrayScores);
+  arrayScores = sorting(arrayScores);
   iteratearray(arrayScores);
 };
 

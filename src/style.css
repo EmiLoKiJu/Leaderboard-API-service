@@ -1,9 +1,15 @@
 body {
   text-align: center;
+  background-image: linear-gradient(to right, purple, blue, black);
 }
 
 h1 {
-  font-size: 30px;
+  font-family: 'Crete Round', sans-serif;
+  font-size: 36px;
+}
+
+button {
+  font-family: 'Crete Round', sans-serif;
 }
 
 header {
@@ -30,6 +36,11 @@ header li:hover {
 
 p {
   margin: 0;
+}
+
+input {
+  background-color: black;
+  color: white;
 }
 
 .dflex {
@@ -60,20 +71,6 @@ p {
   color: rgb(133, 133, 133);
 }
 
-.listbutton {
-  border-right: 1px solid black;
-}
-
-.refreshbutton {
-  margin-top: 30px;
-  margin-left: 16px;
-  height: 20px;
-}
-
-.contactbutton {
-  border-left: 1px solid black;
-}
-
 .dateandtime {
   text-align: end;
   margin-right: 16px;
@@ -89,10 +86,109 @@ p {
   align-items: center;
 }
 
-.contact {
-  margin: 16px 20%;
-}
-
 .scorecontainer {
   padding: 64px;
+}
+
+.section.textstart h1 {
+  margin-left: 30px;
+}
+
+.scoreelementcontainer {
+  font-family: 'Crete Round', sans-serif;
+  font-size: 20px;
+}
+
+.refreshbutton {
+  align-self: center;
+  margin-left: 20px;
+  height: 40px;
+  width: 80px;
+  border: 5px solid black;
+  border-image-slice: 1;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, purple, blue, yellow, black);
+  background-size: 400% 400%;
+  animation: backgroundspin 1s linear infinite;
+  transition: all 0s linear;
+}
+
+.refreshbutton:hover {
+  background-image: none;
+  background-color: black;
+  color: white;
+  animation: spin 1s linear infinite;
+}
+
+.refreshbutton:active {
+  transform: scale(0.9);
+}
+
+@keyframes spin {
+  from { border-image-source: linear-gradient(to right, black, purple, blue, yellow); }
+  25% { border-image-source: linear-gradient(to right, purple, blue, yellow, black); }
+  50% { border-image-source: linear-gradient(to right, blue, yellow, black, purple); }
+  75% { border-image-source: linear-gradient(to right, yellow, black, purple, blue); }
+  to { border-image-source: linear-gradient(to right, black, purple, blue, yellow); }
+}
+
+@keyframes backgroundspin {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 100% 50%; }
+}
+
+.addbutton {
+  align-self: center;
+  margin-left: 20px;
+  height: 40px;
+  width: 80px;
+  border: 5px solid black;
+  border-image-slice: 1;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, pink, blue, orange, white);
+  background-size: 400% 400%;
+  animation: backgroundspin2 1s linear infinite;
+  transition: all 0s linear;
+}
+
+.addbutton:hover {
+  background-image: none;
+  background-color: black;
+  color: white;
+  animation: spin2 1s linear infinite;
+}
+
+.addbutton:active {
+  transform: scale(0.9);
+}
+
+@keyframes spin2 {
+  from { border-image-source: linear-gradient(to right, white, pink, blue, orange); }
+  25% { border-image-source: linear-gradient(to right, pink, blue, orange, white); }
+  50% { border-image-source: linear-gradient(to right, blue, orange, white, pink); }
+  75% { border-image-source: linear-gradient(to right, orange, white, pink, blue); }
+  to { border-image-source: linear-gradient(to right, white, pink, blue, orange); }
+}
+
+@keyframes backgroundspin2 {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 100% 50%; }
+}
+
+.nameandscorecontainer {
+  transition: all 1s;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+}
+
+.nothidden {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
