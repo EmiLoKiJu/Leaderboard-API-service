@@ -468,31 +468,40 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/modules/createscoreelement.js":
-/*!*******************************************!*\
-  !*** ./src/modules/createscoreelement.js ***!
-  \*******************************************/
+/***/ "./src/modules/api.js":
+/*!****************************!*\
+  !*** ./src/modules/api.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "getScores": () => (/* binding */ getScores),
+/* harmony export */   "postScore": () => (/* binding */ postScore)
 /* harmony export */ });
-const scoreElement = {
-  name: '',
-  score: 0,
-  index: 0,
+const endpoint = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const gameID = 'Pde9Q6MGmHtaoQtx74V1'; // SpongeBob vs Simpsom
+
+const postScore = async (name, score) => {
+  const response = await fetch(`${endpoint}${gameID}/scores/`, {
+    method: 'POST',
+    body: JSON.stringify({
+      user: `${name}`,
+      score: `${score}`,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = await response.json();
+  return data;
 };
 
-const createscoreelement = (str, num, arrayScores) => {
-  const newscoreelement = Object.create(scoreElement);
-  newscoreelement.name = str;
-  newscoreelement.score = num;
-  newscoreelement.index = arrayScores.length + 1;
-  arrayScores.push(newscoreelement);
+const getScores = async () => {
+  const response = await fetch(`${endpoint}${gameID}/scores/`);
+  const data = await response.json();
+  return data;
 };
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createscoreelement);
 
 /***/ }),
 
@@ -7702,47 +7711,6 @@ const VERSION = '3.3.0';
 
 /***/ }),
 
-/***/ "./src/modules/isStorageValid.js":
-/*!***************************************!*\
-  !*** ./src/modules/isStorageValid.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const storageAvailable = (type) => {
-  let storage;
-  try {
-    storage = window[type];
-    const x = '__storage_test__';
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  } catch (e) {
-    return (
-      e instanceof DOMException
-      // everything except Firefox
-      && (e.code === 22
-          // Firefox
-          || e.code === 1014
-          // test name field too, because code might not be present
-          // everything except Firefox
-          || e.name === 'QuotaExceededError'
-          // Firefox
-          || e.name === 'NS_ERROR_DOM_QUOTA_REACHED')
-      // acknowledge QuotaExceededError only if there's something already stored
-      && storage
-      && storage.length !== 0
-    );
-  }
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storageAvailable);
-
-/***/ }),
-
 /***/ "./src/modules/iteratearray.js":
 /*!*************************************!*\
   !*** ./src/modules/iteratearray.js ***!
@@ -7765,24 +7733,45 @@ const iteratearray = (arr) => {
     element.classList.add('spacebetween');
     const scorenameelement = document.createElement('div');
     scorenameelement.classList.add('scorenameelement');
-    scorenameelement.innerText = arr[i].name;
+    scorenameelement.innerText = arr[i].user;
     const scorescoreelement = document.createElement('div');
     scorescoreelement.classList.add('scorescoreelement');
     scorescoreelement.innerText = arr[i].score;
-    element.innerHTML = `
-    <div class="dflex">
-      <div class="specificcontainer">
-      </div>
-    </div>
-    `;
     scoreelementcontainer.appendChild(element);
-    const specificcontainer = element.querySelector('.specificcontainer');
-    specificcontainer.appendChild(scorenameelement);
-    specificcontainer.appendChild(scorescoreelement);
+    element.appendChild(scorenameelement);
+    element.appendChild(scorescoreelement);
   }
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (iteratearray);
+
+/***/ }),
+
+/***/ "./src/modules/sorting.js":
+/*!********************************!*\
+  !*** ./src/modules/sorting.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const sorting = (arr) => {
+  for (let i = 0; i < arr.length - 1; i += 1) {
+    let tempmin = arr[i].score;
+    let tempj = 0;
+    for (let j = i + 1; j < arr.length; j += 1) {
+      if (tempmin > arr[j].score) {
+        tempmin = arr[j].score;
+        tempj = j;
+      }
+    }
+    if (tempj > 0) [arr[i], arr[tempj]] = [arr[tempj], arr[i]];
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (sorting);
 
 /***/ })
 
@@ -7867,10 +7856,10 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
-/* harmony import */ var _modules_isStorageValid_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/isStorageValid.js */ "./src/modules/isStorageValid.js");
-/* harmony import */ var _modules_dateandtime_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/dateandtime.js */ "./src/modules/dateandtime.js");
-/* harmony import */ var _modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/iteratearray.js */ "./src/modules/iteratearray.js");
-/* harmony import */ var _modules_createscoreelement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/createscoreelement.js */ "./src/modules/createscoreelement.js");
+/* harmony import */ var _modules_dateandtime_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/dateandtime.js */ "./src/modules/dateandtime.js");
+/* harmony import */ var _modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/iteratearray.js */ "./src/modules/iteratearray.js");
+/* harmony import */ var _modules_api_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/api.js */ "./src/modules/api.js");
+/* harmony import */ var _modules_sorting_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/sorting.js */ "./src/modules/sorting.js");
 
 
 
@@ -7879,17 +7868,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let arrayScores = [];
-const isStorage = (0,_modules_isStorageValid_js__WEBPACK_IMPORTED_MODULE_1__["default"])('localStorage');
 const formtoadd = document.querySelector('form');
 const scorename = document.querySelector('#name');
 const scorescore = document.querySelector('#score');
+const refreshbutton = document.querySelector('.refreshbutton');
 
-const addelement = () => {
-  (0,_modules_createscoreelement_js__WEBPACK_IMPORTED_MODULE_4__["default"])(scorename.value, scorescore.value, arrayScores);
-  localStorage.setItem('ScoreList', JSON.stringify(arrayScores));
+const refresh = async () => {
+  const data = await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_3__.getScores)();
+  arrayScores = await data.result;
+  (0,_modules_sorting_js__WEBPACK_IMPORTED_MODULE_4__["default"])(arrayScores);
+  (0,_modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(arrayScores);
+};
+
+const addelement = async () => {
+  await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_3__.postScore)(scorename.value, scorescore.value);
   scorename.value = '';
   scorescore.value = '';
-  (0,_modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(arrayScores);
+  refresh();
 };
 
 formtoadd.addEventListener('submit', (event) => {
@@ -7899,24 +7894,21 @@ formtoadd.addEventListener('submit', (event) => {
   }
 });
 
-const refresh = () => {
-  arrayScores = JSON.parse(localStorage.getItem('ScoreList'));
-  (0,_modules_iteratearray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(arrayScores);
-};
+refreshbutton.addEventListener('click', () => {
+  refresh();
+});
 
 // Calling the events when loading the document
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (isStorage && JSON.parse(localStorage.getItem('ScoreList')) != null) {
-    refresh();
-  }
+  refresh();
 });
 
 // Date and time
 
 const datetime = document.querySelector('.dateandtime');
 const updateTime = () => {
-  const dt = _modules_dateandtime_js__WEBPACK_IMPORTED_MODULE_2__.DateTime.now();
+  const dt = _modules_dateandtime_js__WEBPACK_IMPORTED_MODULE_1__.DateTime.now();
   const formattedDate = dt.toFormat('LLL d, yyyy, hh:mm:ss a');
   datetime.innerHTML = formattedDate;
 };
