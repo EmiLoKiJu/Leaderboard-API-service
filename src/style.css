@@ -3,7 +3,8 @@ body {
 }
 
 h1 {
-  font-size: 30px;
+  font-family: 'Crete Round', sans-serif;
+  font-size: 36px;
 }
 
 header {
@@ -65,9 +66,9 @@ p {
 }
 
 .refreshbutton {
-  margin-top: 30px;
-  margin-left: 16px;
-  height: 20px;
+  align-self: center;
+  margin-left: 20px;
+  height: 30px;
 }
 
 .contactbutton {
@@ -95,4 +96,13 @@ p {
 
 .scorecontainer {
   padding: 64px;
+}
+
+.section.textstart h1 {
+  margin-left: 30px;
+}
+
+.scoreelementcontainer {
+  font-family: 'Crete Round', sans-serif;
+  font-size: 20px;
 }
