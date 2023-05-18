@@ -2,8 +2,8 @@ import './style.css';
 
 import storageAvailable from './modules/isStorageValid.js';
 import { DateTime } from './modules/dateandtime.js';
-import iteratearray from './modules/iteratearray';
-import createscoreelement from './modules/createscoreelement';
+import iteratearray from './modules/iteratearray.js';
+import createscoreelement from './modules/createscoreelement.js';
 
 let arrayScores = [];
 const isStorage = storageAvailable('localStorage');
