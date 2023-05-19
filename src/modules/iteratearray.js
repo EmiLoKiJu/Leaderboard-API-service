@@ -27,7 +27,7 @@ const iteratearray = (arr) => {
   for (let i = 0; i < hiddenelements.length; i += 1) {
     stylecontent += `
     .nameandscorecontainer:nth-child(${i}) {
-      transition-delay: ${i*200}ms;
+      transition-delay: ${i * 200}ms;
     }
 
     `;
@@ -40,7 +40,7 @@ const iteratearray = (arr) => {
       hiddenelements[i].classList.remove('hidden');
       hiddenelements[i].classList.add('nothidden');
     }
-}, 50);
+  }, 50);
 };
 
 export default iteratearray;

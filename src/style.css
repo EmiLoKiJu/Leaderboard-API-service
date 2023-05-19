@@ -114,7 +114,6 @@ input {
 }
 
 .refreshbutton:hover {
-  animation-play-state: paused;
   background-image: none;
   background-color: black;
   color: white;
@@ -122,7 +121,7 @@ input {
 }
 
 .refreshbutton:active {
-  transform: scale(0.90);
+  transform: scale(0.9);
 }
 
 @keyframes spin {
@@ -132,8 +131,6 @@ input {
   75% { border-image-source: linear-gradient(to right, yellow, black, purple, blue); }
   to { border-image-source: linear-gradient(to right, black, purple, blue, yellow); }
 }
-
-
 
 @keyframes backgroundspin {
   0% { background-position: 0% 50%; }
@@ -156,7 +153,6 @@ input {
 }
 
 .addbutton:hover {
-  animation-play-state: paused;
   background-image: none;
   background-color: black;
   color: white;
@@ -164,7 +160,7 @@ input {
 }
 
 .addbutton:active {
-  transform: scale(0.90);
+  transform: scale(0.9);
 }
 
 @keyframes spin2 {
@@ -174,8 +170,6 @@ input {
   75% { border-image-source: linear-gradient(to right, orange, white, pink, blue); }
   to { border-image-source: linear-gradient(to right, white, pink, blue, orange); }
 }
-
-
 
 @keyframes backgroundspin2 {
   0% { background-position: 0% 50%; }
