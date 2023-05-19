@@ -10,7 +10,7 @@ const iteratearray = (arr) => {
     element.classList.add('nameandscorecontainer');
     element.classList.add('dflex');
     element.classList.add('spacebetween');
-    element.classList.add('hidden');
+    element.classList.add('hidden'); // classname
     const scorenameelement = document.createElement('div');
     scorenameelement.classList.add('scorenameelement');
     scorenameelement.innerText = arr[i].user;
@@ -24,9 +24,9 @@ const iteratearray = (arr) => {
   const hiddenelements = scoreelementcontainer.querySelectorAll('.hidden');
   const stylecontainer = document.createElement('style');
   let stylecontent = '';
-  for (let i = 0; i < hiddenelements.length; i += 1) {
+  for (let i = 0; i < hiddenelements.length; i += 1) { // child i + 1
     stylecontent += `
-    .nameandscorecontainer:nth-child(${i}) {
+    .nameandscorecontainer:nth-child(${i + 1}) {
       transition-delay: ${i * 200}ms;
     }
 

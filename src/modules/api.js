@@ -9,7 +9,7 @@ export const postScore = async (name, score) => {
       score: `${score}`,
     }),
     headers: {
-      'Content-type': 'application/json; charset=UTF-8',
+      'Content-type': 'application/json',
     },
   });
   const data = await response.json();
