@@ -27,7 +27,7 @@ const addelement = async () => {
 
 formtoadd.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (scorename.value !== '' && scorescore.value !== '') {
+  if (scorename.value.trim() !== '') {
     addelement();
   }
 });
